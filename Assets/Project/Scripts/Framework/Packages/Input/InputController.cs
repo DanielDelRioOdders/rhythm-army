@@ -10,8 +10,8 @@ namespace Odders
 	[AddComponentMenu("Odders/Input/Input Controller")]
     public class InputController : BaseObject
     {
-        #region Private Variables
-        private ActionBasedController controller;
+		#region Private Variables
+		private ActionBasedController controller;
 		#endregion Private Variables
 
 
@@ -34,5 +34,10 @@ namespace Odders
 		private void UIPress(UnityEngine.InputSystem.InputAction.CallbackContext obj) => OnUIPress?.Invoke();
 		private void SelectAction(UnityEngine.InputSystem.InputAction.CallbackContext obj) => OnSelect?.Invoke();
 		#endregion Unity Methods
+
+
+		#region Utility Methods
+		public void Vibration() => controller.SendHapticImpulse(0.7f, 0.1f);
+		#endregion Utility Methods
 	}
 }

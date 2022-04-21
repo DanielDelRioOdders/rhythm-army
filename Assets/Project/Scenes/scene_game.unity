@@ -2605,6 +2605,7 @@ GameObject:
   - component: {fileID: 1268031263}
   - component: {fileID: 1268031265}
   - component: {fileID: 1268031264}
+  - component: {fileID: 1268031266}
   m_Layer: 7
   m_Name: Collider
   m_TagString: Player
@@ -2656,6 +2657,65 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.05, y: 0.025, z: 0.05}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1268031266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1268031262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c5c521b3c950e47a367967ead6cb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspector:
+    drawDebugg: 0
+    drawParameters: 1
+    drawEvents: 1
+    draw1: 0
+    draw2: 0
+    draw3: 0
+    draw4: 0
+    draw5: 0
+  OnEnableObject:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDisableObject:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroyObject:
+    m_PersistentCalls:
+      m_Calls: []
+  drawIfNotSelected: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
+  mode: 0
+  total: 0
+  whatToDetect: 2
+  _layer:
+    serializedVersion: 2
+    m_Bits: 1
+  _component: 
+  _name: 
+  _tag: Drum
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 696987627}
+        m_TargetAssemblyTypeName: Odders.InputController, Assembly-CSharp
+        m_MethodName: Vibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1272608813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3104,6 +3164,7 @@ GameObject:
   - component: {fileID: 1774200837}
   - component: {fileID: 1774200838}
   - component: {fileID: 1774200839}
+  - component: {fileID: 1774200840}
   m_Layer: 7
   m_Name: Collider
   m_TagString: Player
@@ -3155,6 +3216,65 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1774200840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774200836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71c5c521b3c950e47a367967ead6cb49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inspector:
+    drawDebugg: 0
+    drawParameters: 1
+    drawEvents: 1
+    draw1: 0
+    draw2: 0
+    draw3: 0
+    draw4: 0
+    draw5: 0
+  OnEnableObject:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDisableObject:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDestroyObject:
+    m_PersistentCalls:
+      m_Calls: []
+  drawIfNotSelected: 0
+  color: {r: 1, g: 1, b: 1, a: 1}
+  mode: 0
+  total: 0
+  whatToDetect: 2
+  _layer:
+    serializedVersion: 2
+    m_Bits: 1
+  _component: 
+  _name: 
+  _tag: Drum
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1046383530}
+        m_TargetAssemblyTypeName: Odders.InputController, Assembly-CSharp
+        m_MethodName: Vibration
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1893963449
 GameObject:
   m_ObjectHideFlags: 0

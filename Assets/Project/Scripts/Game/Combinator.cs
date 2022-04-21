@@ -85,7 +85,7 @@ namespace RhythmArmy
 
 			combo.Add(drum);
 
-			if (count >= compas)
+			if (count >= compas && combo.Count == compas)
 			{
 				Combination combination = GetCombination(combo);
 
