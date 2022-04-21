@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using Odders;
 
 namespace RhythmArmy
@@ -7,8 +8,12 @@ namespace RhythmArmy
     public class RhythmController : BaseObject
     {
 		#region Public Variables
+		[Header("Parameters")]
 		public float delay;
 		public float rate = 1f;
+
+		[Header("Events")]
+		public UnityEvent onBeat;
 		#endregion Public Variables
 
 
@@ -23,7 +28,11 @@ namespace RhythmArmy
 
 
 		#region Main Methods
-		public void InvokeBeat() => OnBeat?.Invoke();
+		public void InvokeBeat()
+		{
+			OnBeat?.Invoke();
+			onBeat.Invoke();
+		}
 		#endregion Main Methods
 	}
 }
