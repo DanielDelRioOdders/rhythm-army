@@ -42,17 +42,13 @@ namespace RhythmArmy
 
 
 		#region Main Methods
+		public void InvokeDrumEvent() => InvokeDrumEvent(drumType);
 		public void InvokeDrumEvent(DrumType drumType)
 		{
 			if (drumType != this.drumType) return;
 
 			onDrum?.Invoke(drumType);
 			OnDrum?.Invoke(drumType);
-		}
-		public void InvokeDrumEvent()
-		{
-			OnDrum?.Invoke(drumType);
-			onDrum?.Invoke(drumType);
 		}
 		#endregion Main Methods
 	}

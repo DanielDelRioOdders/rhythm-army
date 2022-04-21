@@ -15,6 +15,7 @@ namespace RhythmArmy
 		public AudioClip beatClip, accentClip, spawnClip;
 
 		public Transform[] spawners;
+		public Transform[] enemySpawners;
 
 		public Combination[] combinations;
 		#endregion Public Variables
@@ -101,19 +102,24 @@ namespace RhythmArmy
 		private void Spawn(GameObject unitPrefab)
 		{
 			DrumType line = combo.Last();
-			Transform spawner = null;
+			Transform humanSpawn, enemySpawn;
 
+			int i = -1;
 			switch (line)
 			{
-				case DrumType.A: spawner = spawners[0]; break;
-				case DrumType.B: spawner = spawners[1]; break;
-				case DrumType.C: spawner = spawners[2]; break;
+				case DrumType.A: i = 0; break;
+				case DrumType.B: i = 1; break;
+				case DrumType.C: i = 2; break;
 			}
 
-			if (spawner != null)
+			humanSpawn = spawners[i];
+			enemySpawn = enemySpawners[i];
+
+			if (humanSpawn != null)
 			{
-				GameObject obj = Instantiate(unitPrefab, spawner.position, Quaternion.identity, spawner);
-				Debug.Log(obj.name);
+				GameObject obj = Instantiate(unitPrefab, humanSpawn.position, Quaternion.identity, humanSpawn);
+				Unit unit = obj.GetComponent<Unit>();
+				unit.SetDestination(enemySpawn);
 			}
 		}
 		#endregion Main Methods
