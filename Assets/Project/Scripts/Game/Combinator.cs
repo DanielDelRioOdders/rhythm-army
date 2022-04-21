@@ -91,17 +91,16 @@ namespace RhythmArmy
 
 				if (combination != null && combo.Count >= compas)
 				{
-					//Spawn(combination);
-
 					audioSource.PlayOneShot(spawnClip);
-					Debug.Log(combination.name);
+
+					Spawn(combination.unitPrefab);
 				}
 			}
 		}
 
-		private void Spawn(Combination combination)
+		private void Spawn(GameObject unitPrefab)
 		{
-			DrumType line = combination.sequence.Last();
+			DrumType line = combo.Last();
 			Transform spawner = null;
 
 			switch (line)
@@ -113,8 +112,8 @@ namespace RhythmArmy
 
 			if (spawner != null)
 			{
-				GameObject unitPrefab = combination.unitPrefab;
-				Instantiate(unitPrefab, spawner.position, Quaternion.identity);
+				GameObject obj = Instantiate(unitPrefab, spawner.position, Quaternion.identity, spawner);
+				Debug.Log(obj.name);
 			}
 		}
 		#endregion Main Methods

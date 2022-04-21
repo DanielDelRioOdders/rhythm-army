@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 3621194180616018851}
   - component: {fileID: 4022724767237523155}
   m_Layer: 0
-  m_Name: Drum
+  m_Name: prefab_drum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

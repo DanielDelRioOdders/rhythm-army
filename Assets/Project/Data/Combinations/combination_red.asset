@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c97fa6eb2e82b24bbcf14f857154007, type: 3}
-  m_Name: New Combination
+  m_Name: combination_red
   m_EditorClassIdentifier: 
-  unitPrefab: {fileID: 0}
-  sequence: 000000000200000001000000
+  unitPrefab: {fileID: 6124678115722149080, guid: 8724ca1333be0794c8211c1782c91c6d,
+    type: 3}
+  sequence: 000000000000000003000000
