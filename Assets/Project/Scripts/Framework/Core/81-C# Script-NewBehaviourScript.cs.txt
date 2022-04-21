@@ -1,0 +1,28 @@
+using UnityEngine;
+
+namespace Game
+{
+		#ROOTNAMESPACEBEGIN#
+	public class #SCRIPTNAME# : MonoBehaviour
+	{
+		#region Public Variables
+		#endregion Public Variables
+
+
+		#region Private Variables
+		#endregion Private Variables
+
+
+		#region Unity Methods
+		#endregion Unity Methods
+
+
+		#region Main Methods
+		#endregion Main Methods
+
+
+		#region Utility Methods
+		#endregion Utility Methods
+	}
+	#ROOTNAMESPACEEND#
+}
