@@ -12,12 +12,16 @@ namespace RythmMonsters
 		public int defense = 1;
 		public string line;
 		public string id;
+		public Animator animator;
+		public AudioSource audioSource;
+		public AudioClip deadClip, spawnClip;
 		#endregion Public Variables
 
 
 		#region Protected Variables
 		protected NavMeshAgent agent;
 		protected Vector3 destination;
+		protected bool dead;
 		#endregion Protected Variables
 
 
@@ -27,7 +31,13 @@ namespace RythmMonsters
 
 		protected virtual void Awake() => agent = GetComponent<NavMeshAgent>();
 
-		private void OnCollisionEnter(Collision collision)
+		protected virtual void Start()
+		{
+			if (spawnClip != null)
+				audioSource.PlayOneShot(spawnClip);
+		}
+
+		protected virtual void OnCollisionEnter(Collision collision)
 		{
 			if (collision.gameObject.name == line) Destroy(gameObject);
 
@@ -51,7 +61,15 @@ namespace RythmMonsters
 			defense -= damage;
 
 			if (defense <= 0)
-				Destroy(gameObject);
+			{
+				DisableAgent();
+				dead = true;
+				animator.Play("Die");
+				Destroy(gameObject, 1f);
+
+				if (deadClip != null)
+					audioSource.PlayOneShot(deadClip);
+			}
 		}
 		#endregion Main Methods
 
@@ -61,6 +79,8 @@ namespace RythmMonsters
 
 		protected void EnableAgent()
 		{
+			if (dead) return;
+
 			agent.SetDestination(destination);
 			agent.isStopped = false;
 		}

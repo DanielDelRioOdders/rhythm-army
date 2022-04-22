@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 	public int iaHealth = 3;
 	public float delay = 5f;
 	public AudioSource endAudio;
+	public AudioSource music;
 
 	public GameObject controllers;
 	public GameObject winLabel;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 	{
 		controllers.SetActive(false);
 		endAudio.Play();
+		music.Stop();
 	}
 
 	public void TakeDamageHuman()

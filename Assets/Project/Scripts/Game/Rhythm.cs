@@ -72,9 +72,9 @@ namespace RythmMonsters
 				OnBeat?.Invoke();
 				onBeat.Invoke();
 
-				audioSource.PlayOneShot(beatClip);
+				//audioSource.PlayOneShot(beatClip);
 			}
-
+			Debug.Log("Beat!");
 			StopAllCoroutines();
 			StartCoroutine(TimeCoroutine());
 		}

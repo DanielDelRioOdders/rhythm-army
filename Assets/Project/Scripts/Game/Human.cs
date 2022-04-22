@@ -69,12 +69,13 @@ namespace RythmMonsters
 		{
 			Transform spawn, enemySpawn;
 
-			int i = 1;
+			int i;
 			switch (line)
 			{
 				case DrumType.A: i = 0; break;
 				case DrumType.B: i = 1; break;
 				case DrumType.C: i = 2; break;
+				default: return;
 			}
 
 			spawn = spawners[i];
@@ -86,7 +87,7 @@ namespace RythmMonsters
 			unit.tag = tag;
 			unit.line = enemyLine;
 
-			audioSource.PlayOneShot(spawnClip);
+			//audioSource.PlayOneShot(spawnClip);
 		}
 		#endregion Main Methods
 
