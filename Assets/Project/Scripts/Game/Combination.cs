@@ -1,9 +1,9 @@
 using UnityEngine;
 using Odders;
 
-namespace RhythmArmy
+namespace RythmMonsters
 {
-	[CreateAssetMenu(fileName = "New Combination", menuName = "Rhythm Army/Combination")]
+	[CreateAssetMenu(fileName = "New Combination", menuName = "Rythm Monsters/Combination")]
 	public class Combination : ScriptableObject
 	{
 		#region Public Variables

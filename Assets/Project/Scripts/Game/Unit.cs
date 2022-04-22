@@ -2,13 +2,16 @@ using UnityEngine;
 using UnityEngine.AI;
 using Odders;
 
-namespace RhythmArmy
+namespace RythmMonsters
 {
-	[AddComponentMenu("Rhythm Army/Unit"), RequireComponent(typeof(NavMeshAgent))]
+	[AddComponentMenu("Rythm Monsters/Unit"), RequireComponent(typeof(NavMeshAgent))]
 	public class Unit : MonoBehaviour
 	{
 		#region Public Variables
-		public float moveDuration = 0.25f;
+		public int attack = 1;
+		public int defense = 1;
+		public string line;
+		public string id;
 		#endregion Public Variables
 
 
@@ -19,18 +22,36 @@ namespace RhythmArmy
 
 
 		#region Unity Methods
-		protected virtual void OnEnable() => RhythmController.OnBeat += OnBeat;
-		protected virtual void OnDisable() => RhythmController.OnBeat -= OnBeat;
+		protected virtual void OnEnable() => Rhythm.OnAccent += OnAccent;
+		protected virtual void OnDisable() => Rhythm.OnAccent -= OnAccent;
 
 		protected virtual void Awake() => agent = GetComponent<NavMeshAgent>();
+
+		private void OnCollisionEnter(Collision collision)
+		{
+			if (collision.gameObject.name == line) Destroy(gameObject);
+
+			Unit enemy = collision.gameObject.GetComponent<Unit>();
+
+			if (enemy != null && enemy.id == id)
+				enemy.TakeDamage(attack);
+		}
 		#endregion Unity Methods
 
 
 		#region Main Methods
-		protected virtual void OnBeat()
+		protected virtual void OnAccent()
 		{
 			EnableAgent();
-			Invoke(nameof(DisableAgent), moveDuration);
+			Invoke(nameof(DisableAgent), Rhythm.Instance.rate / 4f);
+		}
+
+		public void TakeDamage(int damage)
+		{
+			defense -= damage;
+
+			if (defense <= 0)
+				Destroy(gameObject);
 		}
 		#endregion Main Methods
 

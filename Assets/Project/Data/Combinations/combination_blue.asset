@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitPrefab: {fileID: 6124678115722149080, guid: 51e51c08bc4cdf144ba42b8929ab7600,
     type: 3}
-  sequence: 020000000200000003000000
+  sequence: 020000000200000001000000

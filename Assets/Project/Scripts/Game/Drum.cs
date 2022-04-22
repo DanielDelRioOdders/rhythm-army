@@ -2,13 +2,13 @@ using UnityEngine;
 using UnityEngine.Events;
 using Odders;
 
-namespace RhythmArmy
+namespace RythmMonsters
 {
 	public enum DrumType { RED, GREEN, BLUE, PINK, A, B, C }
 
 	public delegate void DrumDelegate(DrumType drum);
 
-	[AddComponentMenu("Rhythm Army/Drum")]
+	[AddComponentMenu("Rythm Monsters/Drum")]
 	public class Drum : MonoBehaviour
 	{
 		#region Public Variables
